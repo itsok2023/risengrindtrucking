@@ -78,26 +78,26 @@ export const projectsData = [
   export const testimonialsData = [
     {
         name: "Donald Jackman",
-        title: "Marketing Manager",
+        title: "Construction Manager",
         image: profile_img_1,
         alt: "Portrait of Donald Jackman",
         rating: 5,
-        text: "From the very first meeting, they understood my vision and helped me find the perfect property. Their attention to detail and commitment to client satisfaction is unmatched."
+        text: "Rise-N-Grind Trucking handled all our post-construction debris hauling efficiently and professionally. Their team is reliable and punctual."
     },
     {
         name: "Richard Nelson",
-        title: "UI/UX Designer",
+        title: "Property Manager",
         image: profile_img_2,
         alt: "Portrait of Richard Nelson",
         rating: 4,
-        text: "From the very first meeting, they understood my vision and helped me find the perfect property. Their attention to detail and commitment to client satisfaction is unmatched."
+        text: "Their trash hauling and driveway preparation services made managing our apartment complex seamless. Highly recommend their services."
     },
     {
         name: "James Washington",
-        title: "Co-Founder",
+        title: "Contractor",
         image: profile_img_3,
         alt: "Portrait of James Washington",
         rating: 5,
-        text: "From the very first meeting, they understood my vision and helped me find the perfect property. Their attention to detail and commitment to client satisfaction is unmatched."
+        text: "We trust Rise-N-Grind Trucking for equipment rental and transport. They handle everything safely and always deliver on time."
     }
 ];

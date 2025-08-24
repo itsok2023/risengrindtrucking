@@ -1,38 +1,82 @@
-import React from 'react'
-import {assets} from '../assets/assets'
+import { useState, useEffect } from "react";
+import logo from "../assets/logo.svg";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroHeight = document.getElementById("home")?.offsetHeight || 0;
+      if (window.scrollY >= heroHeight) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false); // <-- important: reset when scrolling back up
+      }
+    };
+
+    // Call once in case user reloads page mid-scroll
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <>
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 px-6 md:px-12 py-4 flex items-center justify-between transition-colors duration-500 ${isScrolled ? "bg-gray-900" : "bg-transparent"
+        }`}
+    >
+      {/* Logo */}
+      <div className="flex items-center space-x-2">
+        <img src={logo} alt="Logo" className="h-10 w-10" />
+        <span className="text-white font-extrabold text-lg leading-tight">
+          RISE-N-GRIND <br /> TRUCKING
+        </span>
+      </div>
 
-        <div className='absolute top-0 left-0 w-full z-10'>
+      {/* Desktop Nav */}
+      <div className="hidden lg:flex items-center space-x-6 text-white font-semibold">
+        <a href="#home" className="hover:text-gray-300">Home</a>
+        <a href="#about" className="hover:text-gray-300">About</a>
+        <a href="#services" className="hover:text-gray-300">Services</a>
+        <a href="#testimonials" className="hover:text-gray-300">Testimonials</a>
+        <a
+          href="#contact"
+          className="bg-white text-black px-5 py-2 rounded-full font-bold shadow-md hover:bg-gray-100"
+        >
+          Connect Us
+        </a>
+      </div>
 
-            {/* Logo Section */}
-            <div className='container mx-auto flex items-center py-4 px-6 md:px-20 lg:px-32 bg-transparent'>
-                <div className='text-2xl flex items-center gap-2 font-bold uppercase' >
-                <img className='size-13' src={assets.logo1} alt="" />
-                <p className='text-white '>RISE-N-GRIND TRUCKING</p>
-                </div>
-                
-            
+      {/* Hamburger Button */}
+      <button
+        className="lg:hidden flex flex-col space-y-1"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span className="w-6 h-0.5 bg-white"></span>
+        <span className="w-6 h-0.5 bg-white"></span>
+        <span className="w-6 h-0.5 bg-white"></span>
+      </button>
 
-            
-                <ul className='hidden md:flex gap-7 text-white font-bold'>
-                    <a href="#Header" className='cursor-pointer hover:text-gray-400'>Home</a>
-                    <a href="#Header" className='cursor-pointer hover:text-gray-400'>About</a>
-                    <a href="#Header" className='cursor-pointer hover:text-gray-400'>Projects</a>
-                    <a href="#Header" className='cursor-pointer hover:text-gray-400'>Testimonials</a>
-                </ul>
-           
-                <button className='hidden md:block bg-white px-8 py-2 rounded-full font-bold'>Connect us</button>
-            </div>
-
-
-
+      {/* Mobile/Tablet Menu */}
+      {isOpen && (
+        <div className="absolute top-full left-0 w-full bg-white shadow-md flex flex-col items-center py-6 space-y-6 text-black text-lg font-semibold lg:hidden">
+          <a href="#home" onClick={() => setIsOpen(false)}>Home</a>
+          <a href="#about" onClick={() => setIsOpen(false)}>About</a>
+          <a href="#services" onClick={() => setIsOpen(false)}>Services</a>
+          <a href="#testimonials" onClick={() => setIsOpen(false)}>Testimonials</a>
+          <a
+            href="#contact"
+            onClick={() => setIsOpen(false)}
+            className="bg-black text-white px-6 py-2 rounded-full"
+          >
+            Connect Us
+          </a>
         </div>
- 
-    </>
+      )}
+    </nav>
   );
-}
+};
 
-export default Navbar
+export default Navbar;
