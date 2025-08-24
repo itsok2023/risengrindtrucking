@@ -19,7 +19,7 @@ const AboutUs = () => {
           <img
             src={aboutImage}
             alt="Rise-N-Grind Truck"
-            className="w-full h-auto rounded-lg shadow-lg"
+            className="w-full h-100 object-cover rounded-lg shadow-lg"
           />
         </motion.div>
 

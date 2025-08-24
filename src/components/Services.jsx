@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FaTruck, FaTools, FaDolly, FaTrash } from "react-icons/fa";
-import servicesBg from "/hero.jpg"; // put your background image in /public
+import { SiCcleaner } from "react-icons/si";
+import servicesBg from "/services2.jpg"; // put your background image in /public
 
 const services = [
   {
@@ -18,7 +19,7 @@ const services = [
   },
  
   {
-    icon: <FaDolly className="text-4xl text-white" />,
+    icon: <SiCcleaner className="text-4xl text-white" />,
     title: "Post Construction cleaning",
     description: "Grind-N-Rise isn’t just hauling away debris, but also helping with post-construction cleaning tasks like pressure washing, interior window cleaning and site cleanup.",
     bg: "bg-yellow-500",
