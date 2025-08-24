@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import logo from "../assets/logo.svg";
+import logo from "../assets/RNG white.svg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +29,7 @@ const Navbar = () => {
     >
       {/* Logo */}
       <div className="flex items-center space-x-2">
-        <img src={logo} alt="Logo" className="h-10 w-10" />
+        <img src={logo} alt="Logo" className="h-15 w-15 fill-white" />
         <span className="text-white font-extrabold text-lg leading-tight">
           RISE-N-GRIND <br /> TRUCKING
         </span>
@@ -61,7 +61,8 @@ const Navbar = () => {
 
       {/* Mobile/Tablet Menu */}
       {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-white shadow-md flex flex-col items-center py-6 space-y-6 text-black text-lg font-semibold lg:hidden">
+       <div className="absolute top-full left-0 w-full bg-white shadow-md flex flex-col items-center py-6 space-y-6 text-black text-lg font-semibold lg:hidden max-h-screen ">
+
           <a href="#home" onClick={() => setIsOpen(false)}>Home</a>
           <a href="#about" onClick={() => setIsOpen(false)}>About</a>
           <a href="#services" onClick={() => setIsOpen(false)}>Services</a>

@@ -91,12 +91,12 @@ const HeroSection = () => {
 
           {/* Buttons */}
           <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="w-auto max-w-[200px] mx-auto sm:mx-0 bg-white text-black px-6 py-2 rounded-full font-bold hover:bg-gray-200 transition">
-              Book a Load
-            </button>
-            <button className="w-auto max-w-[200px] mx-auto sm:mx-0 border border-white px-6 py-2 rounded-full font-bold hover:bg-white hover:text-black transition">
+            <a href="#services" className="w-auto max-w-[200px] mx-auto sm:mx-0 bg-white text-black px-6 py-2 rounded-full font-bold hover:bg-gray-200 transition">
+              Our Services
+            </a>
+            <a href="#contact" className="w-auto max-w-[200px] mx-auto sm:mx-0 border border-white px-6 py-2 rounded-full font-bold hover:bg-white hover:text-black transition">
               Contact Us
-            </button>
+            </a>
           </div>
         </div>
       </div>
