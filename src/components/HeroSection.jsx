@@ -28,7 +28,7 @@ const HeroSection = () => {
       className="relative min-h-[70vh] md:min-h-[80vh] lg:min-h-screen bg-cover bg-center flex flex-col text-white"
       style={{
         backgroundImage:
-          "linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('/hero.jpg')",
+          "linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('/header_img.png')",
       }}
       id="home"
     >
