@@ -6,6 +6,8 @@ import HeroSection from './components/HeroSection'
 import AboutUs from './components/AboutUs'
 import Services from './components/Services'
 import Testimonials from './components/Testimonials'
+import Map from './components/Map'
+import ContactForm from './components/ContactForm'
 
 const App = () => {
   return (
@@ -15,6 +17,9 @@ const App = () => {
       <AboutUs/>
       <Services/>
       <Testimonials/>
+      <ContactForm />
+      <Map />
+      
     </div>
   )
 }
