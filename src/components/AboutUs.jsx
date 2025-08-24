@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import aboutImage from "/truck2.jpg"; // replace with your image
+import aboutImage from "/localy.avif"; // replace with your image
 
 const AboutUs = () => {
   return (

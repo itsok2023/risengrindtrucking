@@ -86,7 +86,7 @@ const HeroSection = () => {
               ease: "easeInOut",
             }}
           >
-            Reliable Hauling, Preparation & Distribution Services
+            From Grind to Shine, We Haul It All.
           </motion.p>
 
           {/* Buttons */}
