@@ -142,7 +142,7 @@ function ContactPage() {
           <img
             src="/certification.png"
             alt="Certification Logo"
-            className="w-32 lg:w-80 lg:mt-50 lg:ml-10 h-auto mb-4"
+            className="w-60 lg:w-80 lg:mt-50 lg:ml-10 h-auto mb-4"
           />
           <p className="text-gray-700 font-medium text-lg lg:ml-10">
             NAICS: <span className="font-semibold">484119 / 441320</span>
