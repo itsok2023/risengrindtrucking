@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import logo from "../assets/RNG white.svg";
+import logo from "../assets/Rise-n-Grind.webp";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

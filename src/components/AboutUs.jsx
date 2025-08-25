@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import aboutImage from "/GI1.jpg"; // replace with your image
+import aboutImage from "/GI1.jpg"; // Replace with your actual image path
 
 const AboutUs = () => {
   return (
@@ -8,9 +8,10 @@ const AboutUs = () => {
       className="py-16 md:py-24 bg-gray-100 text-gray-900"
     >
       <div className="container mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center gap-12">
-        {/* Image */}
+        
+        {/* Image Section */}
         <motion.div
-          className="w-full lg:w-1/2"
+          className="w-full lg:w-1/2 min-w-0"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
@@ -19,26 +20,29 @@ const AboutUs = () => {
           <img
             src={aboutImage}
             alt="Rise-N-Grind Truck"
-            className="w-full h-100 object-cover rounded-lg shadow-lg"
+            className="w-full max-w-full h-auto object-cover rounded-lg shadow-lg"
           />
         </motion.div>
 
-        {/* Text */}
+        {/* Text Section */}
         <motion.div
-          className="w-full lg:w-1/2"
+          className="w-full lg:w-1/2 min-w-0"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">About Us</h2>
-          <p className="text-base sm:text-lg leading-relaxed mb-4">
+
+          <p className="text-base sm:text-lg leading-relaxed mb-4 text-justify">
             At <strong>Rise-N-Grind Trucking</strong>, we specialize in hauling after construction cleaning, driveway preparation, equipment rental and distribution services, ensuring that our clients receive top-quality support from start to finish. Whether it’s clearing away debris after a construction project, transporting heavy equipment, or distributing essential materials, we bring the same level of commitment and professionalism to every job.
           </p>
-          <p className="text-base sm:text-lg leading-relaxed mb-4">
+
+          <p className="text-base sm:text-lg leading-relaxed mb-4 text-justify">
             In addition, we proudly serve apartment complexes and commercial buildings with dependable trash hauling services, helping property owners and managers maintain clean and safe environments for their tenants and customers.
           </p>
-          <p className="text-base sm:text-lg leading-relaxed">
+
+          <p className="text-base sm:text-lg leading-relaxed text-justify">
             Our mission is to provide trustworthy, efficient, and affordable trucking solutions that meet the unique needs of each client. With a team that values punctuality, safety, and customer satisfaction above all else, <strong>Rise-N-Grind Trucking</strong> is more than just a service provider—we’re your reliable partner on the road to success.
           </p>
         </motion.div>
