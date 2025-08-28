@@ -20,7 +20,7 @@ const Map = () => {
       <div className="relative z-10 w-[80vw] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* Contact Info */}
         <div className="order-1 lg:order-2 space-y-6">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Get in Touch</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Get a Quote</h2>
 
           {/* Address */}
           <div className="flex items-center gap-4 p-4 bg-white/10 rounded-xl">

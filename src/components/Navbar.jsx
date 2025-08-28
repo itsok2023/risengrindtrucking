@@ -45,7 +45,7 @@ const Navbar = () => {
           href="#contact"
           className="bg-white text-black px-5 py-2 rounded-full font-bold shadow-md hover:bg-gray-100"
         >
-          Get in Touch
+          Get a Quote
         </a>
       </div>
 
@@ -72,7 +72,7 @@ const Navbar = () => {
             onClick={() => setIsOpen(false)}
             className="bg-black text-white px-6 py-2 rounded-full"
           >
-            Get in Touch
+            Get a Quote
           </a>
         </div>
       )}
