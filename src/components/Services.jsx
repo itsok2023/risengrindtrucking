@@ -21,7 +21,7 @@ const services = [
   {
     icon: <SiCcleaner className="text-4xl text-white" />,
     title: "Post Construction cleaning",
-    description: "Grind-N-Rise isn’t just hauling away debris, but also helping with post-construction cleaning tasks like pressure washing, interior window cleaning and site cleanup.",
+    description: "Rise-N-Grind isn’t just hauling away debris, but also helping with post-construction cleaning tasks like pressure washing, interior window cleaning and site cleanup.",
     bg: "bg-yellow-500",
   },
  
