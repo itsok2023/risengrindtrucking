@@ -8,6 +8,7 @@ import Services from './components/Services'
 import Testimonials from './components/Testimonials'
 import Map from './components/Map'
 import ContactForm from './components/ContactForm'
+import BeforeAfter from './components/BeforeAfter'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <HeroSection/>
       <AboutUs/>
       <Services/>
+      <BeforeAfter />
       <Testimonials/>
       <ContactForm />
       <Map />
