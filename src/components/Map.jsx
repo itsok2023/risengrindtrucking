@@ -5,7 +5,7 @@ import { FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
 const Map = () => {
   return (
     <section
-      id="contact"
+      id="getaquote"
       className="relative bg-black text-white py-16 px-4 sm:px-6 lg:px-20 overflow-hidden"
       style={{
         backgroundImage: "url('/connect.jpg')",
@@ -41,7 +41,7 @@ const Map = () => {
           {/* Email */}
           <div className="flex items-center gap-4 p-4 bg-white/10 rounded-xl">
             <Mail className="w-6 h-6 text-green-400" />
-            <span className="md:text-lg">support@risengrindtrucking.com</span>
+            <span className="md:text-lg">admin@risengrindtrucking.com</span>
           </div>
 
           {/* Social Icons */}
