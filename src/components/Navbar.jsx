@@ -41,6 +41,7 @@ const Navbar = () => {
         <a href="#about" className="hover:text-gray-300">About</a>
         <a href="#services" className="hover:text-gray-300">Services</a>
         <a href="#testimonials" className="hover:text-gray-300">Testimonials</a>
+        <a href="#contact" className="hover:text-gray-300">Contact Us</a>
         <a
           href="#getaquote"
           className="bg-white text-black px-5 py-2 rounded-full font-bold shadow-md hover:bg-gray-100"
@@ -67,6 +68,7 @@ const Navbar = () => {
           <a href="#about" onClick={() => setIsOpen(false)}>About</a>
           <a href="#services" onClick={() => setIsOpen(false)}>Services</a>
           <a href="#testimonials" onClick={() => setIsOpen(false)}>Testimonials</a>
+          <a href="#contact" onClick={() => setIsOpen(false)}>Contact Us</a>
           <a
             href="#getaquote"
             onClick={() => setIsOpen(false)}

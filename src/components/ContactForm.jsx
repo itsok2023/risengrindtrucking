@@ -39,13 +39,13 @@ function ContactPage() {
   };
 
   return (
-    <div id="contact" className="w-full max-w-6xl mx-auto mt-5 mb-5 px-4 sm:px-6">
+    <div id="getaquote" className="w-full max-w-6xl mx-auto mt-5 mb-5 px-4 sm:px-6">
       <div className="flex flex-col lg:flex-row gap-8 items-start">
         {/* Contact Form */}
         <div className="w-full lg:w-2/3">
           <div className="w-full px-4 py-12 bg-gradient-to-br from-white to-gray-50 rounded-3xl shadow-2xl border border-gray-200 overflow-hidden">
             <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center text-gray-900">
-              Contact us
+              Get a Quote
             </h2>
 
             <form ref={formRef} onSubmit={sendEmail} className="space-y-7">

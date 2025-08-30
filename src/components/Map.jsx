@@ -5,7 +5,7 @@ import { FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
 const Map = () => {
   return (
     <section
-      id="getaquote"
+      id="contact"
       className="relative bg-black text-white py-16 px-4 sm:px-6 lg:px-20 overflow-hidden"
       style={{
         backgroundImage: "url('/connect.jpg')",
@@ -20,7 +20,7 @@ const Map = () => {
       <div className="relative z-10 w-[80vw] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         {/* Contact Info */}
         <div className="order-1 lg:order-2 space-y-6">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Get a Quote</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Contact Us</h2>
 
           {/* Address */}
           <div className="flex items-center gap-4 p-4 bg-white/10 rounded-xl">
