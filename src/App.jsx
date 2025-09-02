@@ -9,6 +9,7 @@ import Testimonials from './components/Testimonials'
 import Map from './components/Map'
 import ContactForm from './components/ContactForm'
 import BeforeAfter from './components/BeforeAfter'
+import Chatbot from './components/Chatbot'
 
 const App = () => {
   return (
@@ -21,7 +22,7 @@ const App = () => {
       <Testimonials/>
       <ContactForm />
       <Map />
-      
+      <Chatbot />
     </div>
   )
 }
