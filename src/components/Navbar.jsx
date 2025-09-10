@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import logo from "../assets/Rise-n-Grind.webp";
+import logo from "../assets/Rise-n-Grind4.svg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +29,7 @@ const Navbar = () => {
     >
       {/* Logo */}
       <div className="flex items-center space-x-2">
-        <img src={logo} alt="Logo" className="h-15 w-15 fill-white" />
+        <img src={logo} alt="Logo" className="h-15 w-15 fill-white rounded-full" />
         <span className="text-white font-extrabold text-lg leading-tight">
           RISE-N-GRIND <br /> TRUCKING
         </span>
