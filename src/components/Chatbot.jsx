@@ -20,8 +20,9 @@ const Chatbot = () => {
     { text: "Perfect. Please leave a short message or feedback.", type: 'bot' },
     { text: "Got it. Can we send this information to the company?", type: 'bot' },
     { text: "Thank you! We have sent your request. Someone will be in touch shortly.", type: 'bot' },
-    { text: "No problem! Have a great day.", type: 'bot' },
+    { text: "No problem, is there any thing else we can help you with!", type: 'bot' },
     { text: "Thank you for your feedback!", type: 'bot' },
+    { text: "Have a great day!", type: 'bot' }, // New message at index 8
   ];
 
   useEffect(() => {
@@ -68,7 +69,8 @@ const Chatbot = () => {
           setStep(1);
         } else {
           nextBotMessage = botMessages[6];
-          setStep(99); // End conversation
+          // MODIFICATION: Change step to 5 to ask for another action, instead of ending.
+          setStep(5);
         }
         break;
       case 1: // "What is your name?"
@@ -138,6 +140,18 @@ const Chatbot = () => {
         }
         setStep(99); // End conversation
         break;
+      
+        // MODIFICATION: Add a new case to handle the follow-up question.
+      case 5: // After "anything else we can help you with!"
+        if (response.toLowerCase() === 'yes') {
+          nextBotMessage = botMessages[1]; // "Great! What is your name?"
+          setStep(1); // Restart the flow to collect data
+        } else {
+          nextBotMessage = botMessages[8]; // "Have a great day!"
+          setStep(99); // End conversation
+        }
+        break;
+
       default:
         break;
     }
@@ -181,6 +195,13 @@ const Chatbot = () => {
                 <div className="flex justify-center space-x-2 mt-4">
                     <button onClick={() => handleQuickReply('Yes')} className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-blue-600 transition-colors">Yes, send it</button>
                     <button onClick={() => handleQuickReply('No')} className="bg-gray-300 text-gray-800 px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-400 transition-colors">No, cancel</button>
+                </div>
+            )}
+            {/* MODIFICATION: Add quick reply buttons for the new step 5 */}
+            {step === 5 && (
+                <div className="flex justify-center space-x-2 mt-4">
+                    <button onClick={() => handleQuickReply('Yes')} className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-blue-600 transition-colors">Yes</button>
+                    <button onClick={() => handleQuickReply('No')} className="bg-gray-300 text-gray-800 px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-400 transition-colors">No</button>
                 </div>
             )}
           </div>
