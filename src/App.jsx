@@ -10,6 +10,7 @@ import Map from './components/Map'
 import ContactForm from './components/ContactForm'
 import BeforeAfter from './components/BeforeAfter'
 import Chatbot from './components/Chatbot'
+import CompanyJourney from './components/CompanyJourney'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       <Services/>
       <BeforeAfter />
       <Testimonials/>
+      <CompanyJourney />
       <ContactForm />
       <Map />
       <Chatbot />
