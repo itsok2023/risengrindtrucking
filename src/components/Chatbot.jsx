@@ -14,7 +14,7 @@ const Chatbot = () => {
   const chatContainerRef = useRef(null);
 
   const botMessages = [
-    { text: "Hello! Would you like to get a quote?", type: 'bot' },
+    { text: "Welcome to our site, if you need help simply reply to this message, we are online and ready to help.", type: 'bot' },
     { text: "Great! What is your name?", type: 'bot' },
     { text: "Thanks! What is your phone number?", type: 'bot' },
     { text: "Perfect. Please leave a short message or feedback.", type: 'bot' },
