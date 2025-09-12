@@ -35,7 +35,7 @@ const Map = () => {
           {/* Phone */}
           <div className="flex items-center gap-4 p-4 bg-white/10 rounded-xl">
             <Phone className="w-6 h-6 text-blue-400" />
-            <span className="md:text-lg">(810) 818-4610</span>
+            <span className="md:text-lg">(704) 312-1263</span>
           </div>
 
           {/* Email */}

@@ -7,22 +7,21 @@ const Chatbot = () => {
   const [step, setStep] = useState(0);
   const [userData, setUserData] = useState({
     name: '',
-    phone: '',
-    message: '',
+    message: '', // 'phone' property removed
   });
 
   const chatContainerRef = useRef(null);
 
+  // Updated botMessages array (phone question removed)
   const botMessages = [
     { text: "Welcome to our site, if you need help simply reply to this message, we are online and ready to help.", type: 'bot' },
-    { text: "Great! What is your name?", type: 'bot' },
-    { text: "Thanks! What is your phone number?", type: 'bot' },
-    { text: "Perfect. Please leave a short message or feedback.", type: 'bot' },
-    { text: "Got it. Can we send this information to the company?", type: 'bot' },
-    { text: "Thank you! We have sent your request. Someone will be in touch shortly.", type: 'bot' },
-    { text: "No problem, is there any thing else we can help you with!", type: 'bot' },
-    { text: "Thank you for your feedback!", type: 'bot' },
-    { text: "Have a great day!", type: 'bot' }, // New message at index 8
+    { text: "Great! What is your name?", type: 'bot' }, // index 1
+    { text: "Perfect. Please leave a short message or feedback.", type: 'bot' }, // new index 2
+    { text: "Got it. Can we send this information to the company?", type: 'bot' }, // new index 3
+    { text: "Thank you! We have sent your request. Someone will be in touch shortly.", type: 'bot' }, // new index 4
+    { text: "No problem, is there any thing else we can help you with!", type: 'bot' }, // new index 5
+    { text: "Thank you for your feedback!", type: 'bot' }, // new index 6
+    { text: "Have a great day!", type: 'bot' }, // new index 7
   ];
 
   useEffect(() => {
@@ -59,47 +58,45 @@ const Chatbot = () => {
     setTimeout(() => processUserResponse(reply), 500);
   };
 
+  // Fully updated conversation logic
   const processUserResponse = (response) => {
     let nextBotMessage = null;
 
     switch (step) {
-      case 0: // "Would you like to get a quote?"
+      case 0: // Welcome message response
         if (response.toLowerCase() === 'yes') {
-          nextBotMessage = botMessages[1];
+          nextBotMessage = botMessages[1]; // Ask for name
           setStep(1);
         } else {
-          nextBotMessage = botMessages[6];
-          // MODIFICATION: Change step to 5 to ask for another action, instead of ending.
+          nextBotMessage = botMessages[5]; // "anything else we can help you with!"
           setStep(5);
         }
         break;
-      case 1: // "What is your name?"
+      
+      case 1: // After user enters their name
         setUserData(prev => ({ ...prev, name: response }));
-        nextBotMessage = botMessages[2];
-        setStep(2);
+        nextBotMessage = botMessages[2]; // JUMP DIRECTLY to asking for a message
+        setStep(3); // SET the next step to 3 (handling the message)
         break;
-      case 2: // "What is your phone number?"
-        setUserData(prev => ({ ...prev, phone: response }));
-        nextBotMessage = botMessages[3];
-        setStep(3);
-        break;
-      case 3: // "Please leave a short message or feedback."
+      
+      // STEP 2 for the phone number is now completely removed.
+
+      case 3: // After user enters their message
         setUserData(prev => ({ ...prev, message: response }));
-        nextBotMessage = botMessages[4];
+        nextBotMessage = botMessages[3]; // Ask for sending confirmation
         setStep(4);
         break;
-      case 4: // "Can we send this information?"
-        if (response.toLowerCase() === 'yes') {
-          // Add a "sending..." message for better UX
+
+      case 4: // After user confirms sending
+        if (response.toLowerCase() === 'yes' || response.toLowerCase() === 'yes, send it') {
           setMessages(prev => [...prev, { text: 'Sending your request...', type: 'bot' }]);
 
           const templateParams = {
             name: userData.name,
-            phone: userData.phone,
-            message: userData.message,
+            message: userData.message, // 'phone' parameter removed
           };
 
-          // Replace with your actual EmailJS credentials
+          // IMPORTANT: Make sure your EmailJS template does not require a 'phone' variable.
           const serviceID = 'service_19gzj3c';
           const templateID = 'template_yhey6tr';
           const publicKey = 'XL7fCY_RL7PSOWLBv';
@@ -108,15 +105,13 @@ const Chatbot = () => {
             window.emailjs.send(serviceID, templateID, templateParams, publicKey)
               .then((result) => {
                   console.log('Email successfully sent!', result.text);
-                  // Replace the "sending..." message with the success message
                   setMessages(prev => {
                       const newMessages = [...prev];
-                      newMessages[newMessages.length - 1] = botMessages[5];
+                      newMessages[newMessages.length - 1] = botMessages[4]; // Success message
                       return newMessages;
                   });
               }, (error) => {
                   console.error('Failed to send email.', error.text);
-                   // Replace the "sending..." message with an error message
                   setMessages(prev => {
                       const newMessages = [...prev];
                       newMessages[newMessages.length - 1] = { text: "Sorry, there was an error sending your request. Please try again later.", type: 'bot' };
@@ -124,30 +119,28 @@ const Chatbot = () => {
                   });
               });
           } else {
-              console.error('EmailJS script has not loaded yet.');
-              setMessages(prev => {
-                    const newMessages = [...prev];
-                    newMessages[newMessages.length - 1] = { text: "Sorry, the email service is unavailable right now. Please try again later.", type: 'bot' };
-                    return newMessages;
-              });
+            console.error('EmailJS script has not loaded yet.');
+            setMessages(prev => {
+                const newMessages = [...prev];
+                newMessages[newMessages.length - 1] = { text: "Sorry, the email service is unavailable right now. Please try again later.", type: 'bot' };
+                return newMessages;
+            });
           }
 
-
           setStep(99); // End conversation
-          return; // Exit here because the async operation will handle the next message
+          return; 
         } else {
-          nextBotMessage = botMessages[7];
+          nextBotMessage = botMessages[6]; // "Thank you for your feedback!"
         }
         setStep(99); // End conversation
         break;
       
-        // MODIFICATION: Add a new case to handle the follow-up question.
       case 5: // After "anything else we can help you with!"
         if (response.toLowerCase() === 'yes') {
           nextBotMessage = botMessages[1]; // "Great! What is your name?"
           setStep(1); // Restart the flow to collect data
         } else {
-          nextBotMessage = botMessages[8]; // "Have a great day!"
+          nextBotMessage = botMessages[7]; // "Have a great day!"
           setStep(99); // End conversation
         }
         break;
@@ -196,8 +189,7 @@ const Chatbot = () => {
                     <button onClick={() => handleQuickReply('Yes')} className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-blue-600 transition-colors">Yes, send it</button>
                     <button onClick={() => handleQuickReply('No')} className="bg-gray-300 text-gray-800 px-4 py-2 rounded-full text-sm font-semibold hover:bg-gray-400 transition-colors">No, cancel</button>
                 </div>
-            )}
-            {/* MODIFICATION: Add quick reply buttons for the new step 5 */}
+             )}
             {step === 5 && (
                 <div className="flex justify-center space-x-2 mt-4">
                     <button onClick={() => handleQuickReply('Yes')} className="bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-blue-600 transition-colors">Yes</button>
@@ -248,7 +240,6 @@ const Chatbot = () => {
 
 // Main App component to render the Chatbot
 const App = () => {
-  // FIX: Dynamically load the EmailJS script when the app mounts
   useEffect(() => {
     const script = document.createElement('script');
     script.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js";
@@ -257,7 +248,6 @@ const App = () => {
     document.head.appendChild(script);
 
     return () => {
-      // Clean up the script when the component unmounts
       document.head.removeChild(script);
     };
   }, []);
@@ -271,6 +261,4 @@ const App = () => {
   );
 }
 
-
 export default App;
-
