@@ -29,7 +29,7 @@ const Navbar = () => {
     >
       {/* Logo */}
       <div className="flex items-center space-x-2">
-        <img src={logo} alt="Logo" className="h-15 w-15 fill-white rounded-full" />
+        <img src={logo} alt="Logo" className="md:h-18 md:w-18 h-15 w-15 fill-white rounded-full" />
         <span className="text-white font-extrabold text-lg leading-tight">
           RISE-N-GRIND <br /> TRUCKING
         </span>
