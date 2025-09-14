@@ -97,9 +97,9 @@ const Chatbot = () => {
           };
 
           // IMPORTANT: Make sure your EmailJS template does not require a 'phone' variable.
-          const serviceID = 'service_m1dfak5';
-          const templateID = 'template_ydnwhdn';
-          const publicKey = 'lE_bwZzCyjM59npSd';
+          const serviceID = 'service_gec7izn';
+          const templateID = 'template j63tiln';
+          const publicKey = 'Wfqw1gZPfuBuT-Bjq';
           
           if (window.emailjs) {
             window.emailjs.send(serviceID, templateID, templateParams, publicKey)
