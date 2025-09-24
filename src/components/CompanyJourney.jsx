@@ -3,10 +3,10 @@ import React from 'react';
 const CompanyJourney = () => {
   const journeyData = [
     {
-      year: "2015",
-      title: "The Genesis",
+      year: "2021",
+      title: "Contract Highlights",
       points: [
-        "Company was founded with a core team.First prototype developed in a small office.Secured initial seed funding to kickstart operations.",
+        "Contracted with Sunrock Industry for paving services, delivering quality results since 2021.",
       
       ],
     },
@@ -27,10 +27,10 @@ const CompanyJourney = () => {
       ],
     },
     {
-      year: "2025",
-      title: "Future Horizons",
+      year: "2024",
+      title: "Contract Award",
       points: [
-        "Pioneering research in AI-driven solutions.Committed to sustainable and green technology.Planning to enter two new major markets.",
+        "Awarded Wet Batch Hauling Contract at RDU Airport by Beaver Excavator for Summer 2024",
        
       ],
     },

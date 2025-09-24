@@ -11,6 +11,7 @@ import ContactForm from './components/ContactForm'
 import BeforeAfter from './components/BeforeAfter'
 import Chatbot from './components/Chatbot'
 import CompanyJourney from './components/CompanyJourney'
+import Careers from './components/Careers'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       <AboutUs/>
       <Services/>
       <BeforeAfter />
+      <Careers />
       <Testimonials/>
       <CompanyJourney />
       <ContactForm />
