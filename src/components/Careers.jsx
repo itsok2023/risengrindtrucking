@@ -1,28 +1,5 @@
 import React from 'react';
-
-// To use this component, make sure you have React and Tailwind CSS set up in your project.
-// You can add Tailwind CSS to your project by following the instructions on their official website.
-// The background image is set using an online placeholder.
-//
-// == HOW TO MAKE CHANGES ==
-//
-// 1. To change the BACKGROUND IMAGE:
-//    - Find the `style` attribute on the main `div`.
-//    - Replace the URL in `backgroundImage: 'url(...)'` with the path to your own image.
-//    - For example: `backgroundImage: 'url("/path/to/your/image.jpg")'`
-//
-// 2. To change the MAIN HEADING text:
-//    - Find the `<h1>` element and replace "LONGEVITY MATTERS" with your desired heading.
-//
-// 3. To change the PARAGRAPH text:
-//    - Find the `<p>` element and replace the text inside it.
-//
-// 4. To change the LIST of benefits:
-//    - Find the `<ul>` element.
-//    - Edit the text inside each `<li>` element (e.g., "Vacation Pay", "Insurance Reimbursement").
-//
-// 5. To change the BUTTON text:
-//    - Find the `<button>` element and change "APPLY NOW" to your preferred text.
+import CareerForm from './CareerForm';
 
 const Careers = () => {
   return (
@@ -43,10 +20,10 @@ const Careers = () => {
           </h1>
           <p className="text-base sm:text-lg mb-8 max-w-md font-medium">
              {/* STEP 3: Change the descriptive paragraph here */}
-            60 years strong and not going anywhere. Work for a family owned company who rewards our drivers with bonuses for logging more hours.
+            Work for a family owned company who rewards our drivers with bonuses for logging more hours.
           </p>
           {/* IMPROVED: Button with icon and hover animation */}
-          <button className="flex items-center gap-3 bg-red-600 text-white font-bold py-3 px-8 rounded-md text-lg hover:bg-red-700 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl shadow-lg group">
+          <a href="/apply"><button className="flex items-center gap-3 bg-red-600 text-white font-bold py-3 px-8 rounded-md text-lg hover:bg-red-700 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl shadow-lg group">
             {/* STEP 5: Change the button text here */}
             APPLY NOW
             <svg 
@@ -58,21 +35,10 @@ const Careers = () => {
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </button>
+          </button></a>
         </div>
         
-        {/* Right Side: Benefits List */}
-        <div className="flex flex-col justify-center items-start md:items-end text-left md:text-right p-4">
-            {/* IMPROVED: "Frosted glass" effect with backdrop blur */}
-            <div className="bg-black/30 backdrop-blur-md p-6 rounded-xl border border-white/20 shadow-lg">
-                 <ul className="space-y-4 text-xl sm:text-2xl font-semibold">
-                    {/* STEP 4: Change the list items (benefits) here */}
-                    <li className="[text-shadow:_0_1px_3px_rgb(0_0_0_/_40%)]">Vacation Pay</li>
-                    <li className="[text-shadow:_0_1px_3px_rgb(0_0_0_/_40%)]">Insurance Reimbursement</li>
-                    <li className="[text-shadow:_0_1px_3px_rgb(0_0_0_/_40%)]">Monthly Bonuses</li>
-                </ul>
-            </div>
-        </div>
+        
       </div>
     </div>
   );

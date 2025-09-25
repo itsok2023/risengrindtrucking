@@ -1,3 +1,4 @@
+import { Info } from 'lucide-react';
 import React from 'react';
 
 const CompanyJourney = () => {
@@ -5,31 +6,31 @@ const CompanyJourney = () => {
     {
       year: "2021",
       title: "Contract Highlights",
-      points: [
+      info: [
         "Contracted with Sunrock Industry for paving services, delivering quality results since 2021.",
       
       ],
     },
     {
-      year: "2018",
+      year: "2022",
       title: "Major Milestone",
-      points: [
-        "Launched our flagship product to the public.Expanded the team to 25+ employees.Reached our first 10,000 active users.",
+      info: [
+        "Launched our flagship product to the public. Expanded the team to 25+ employees.Reached our first 10,000 active users.",
        
       ],
     },
     {
-      year: "2022",
+      year: "2023",
       title: "Global Expansion",
-      points: [
-        "Opened first international office.Product localized for three new languages.User base grew to over 1 million globally.",
+      info: [
+        "Opened first international office. Product localized for three new languages.User base grew to over 1 million globally.",
        
       ],
     },
     {
       year: "2024",
       title: "Contract Award",
-      points: [
+      info: [
         "Awarded Wet Batch Hauling Contract at RDU Airport by Beaver Excavator for Summer 2024",
        
       ],
@@ -66,8 +67,8 @@ const CompanyJourney = () => {
                     {/* Content Card below the line */}
                     <div className="mt-20 bg-gray-800 rounded-lg p-4 text-left shadow-xl border border-gray-700 min-h-[190px]">
                       <h3 className="font-bold text-lg mb-2 text-white">{item.title}</h3>
-                      <ul className="text-sm text-gray-400 list-disc list-inside space-y-1">
-                        {item.points.map((point, i) => <li key={i}>{point}</li>)}
+                      <ul className="text-sm text-gray-400 text-justify space-y-1">
+                        {item.info.map((info, i) => <li key={i}>{info}</li>)}
                       </ul>
                     </div>
                   </div>
@@ -91,8 +92,8 @@ const CompanyJourney = () => {
                 {/* Content Card */}
                 <div className="bg-gray-800 rounded-lg p-4 shadow-xl border border-gray-700">
                   <h3 className="font-bold text-lg mb-2 text-white">{item.title}</h3>
-                  <ul className="text-sm text-gray-400 list-disc list-inside space-y-1">
-                    {item.points.map((point, i) => <li key={i}>{point}</li>)}
+                  <ul className="text-sm text-gray-400 text-justify  space-y-1">
+                    {item.info.map((info, i) => <li key={i}>{info}</li>)}
                   </ul>
                 </div>
               </div>
