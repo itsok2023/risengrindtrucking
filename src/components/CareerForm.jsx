@@ -253,7 +253,7 @@ setIsSubmitting(true);
                   <label className="flex items-start gap-3">
                       <input type="checkbox" name="agreeToCommunications" checked={formData.agreeToCommunications} onChange={handleChange} className="mt-1 h-5 w-5 accent-blue-600" />
                       <div>
-                          <p className="font-semibold">Yes, I agree to receive information concerning future opportunities or promotions from Bellerud Transport by email or other commercial electronic communications.</p>
+                          <p className="font-semibold">Yes, I agree to receive information concerning future opportunities or promotions from Rise-N-Grind Trucking by email or other commercial electronic communications.</p>
                       </div>
                   </label>
               </div>
@@ -261,7 +261,7 @@ setIsSubmitting(true);
                   <label className="flex items-start gap-3">
                       <input type="checkbox" name="agreeToTexts" checked={formData.agreeToTexts} onChange={handleChange} className="mt-1 h-5 w-5 accent-blue-600" />
                       <div>
-                          <p className="font-semibold">Would you like to receive communication from Bellerud Transport via text message?</p>
+                          <p className="font-semibold">Would you like to receive communication from Rise-N-Grind Trucking via text message?</p>
                           <p className="text-sm text-gray-600 mt-1">By participating, you consent to receive text messages sent by an automatic telephone dialing system, which may contain recruiting/advertising messages. Consent to these terms is not a condition of being hired, contracted, or leased. You may opt out at any time by texting STOP to unsubscribe.</p>
                       </div>
                   </label>
